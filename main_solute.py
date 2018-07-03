@@ -32,7 +32,7 @@ def main():
     trainer = SoluteModelTrainer(model.model, data_loader.get_train_data(), config)
 
     print('Start training the model.')
-    #trainer.train()
+    trainer.train()
 
 
 if __name__ == '__main__':

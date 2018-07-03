@@ -23,7 +23,9 @@ class SoluteDataLoader(BaseDataLoader):
         print(self.spectra_arry.shape)
 
     def get_train_data(self):
-        return self.spectra_arry, self.y_molar_c_mmol
+        #print(np.expand_dims(self.spectra_arry, axis=2).shape)
+        print(len(self.y_molar_c_mmol))
+        return np.expand_dims(self.spectra_arry, axis=2), np.array(self.y_molar_c_mmol, dtype=np.float32)
 
     def get_test_data(self):
         return self.X_test, self.y_test
