@@ -1,0 +1,41 @@
+{
+  "exp": {
+    "name": "solute",
+    "comet_api_key": "AHcyFd2O9nvww9eaAE7cxhuVA"
+  },
+  "data_base": {
+    "path": "data_loader/Shootout_2018_datasets/CalibrationC.txt",
+    "solute": "KCl"
+  },
+  "model":{
+    "learning_rate": 0.0453,
+    "l2_reg": 7e-7,
+    "optimizer": "adam"
+  },
+  "trainer":{
+    "num_epochs": 2,
+    "batch_size": 64,
+    "validation_split":0.25,
+    "verbose_training": true
+  },
+  "callbacks":{
+    "checkpoint_monitor": "val_loss",
+    "checkpoint_mode": "min",
+    "checkpoint_save_best_only": true,
+    "checkpoint_save_weights_only": true,
+    "checkpoint_verbose": true,
+    "tensorboard_write_graph": true
+  },
+  "param_optim":{
+    "l1_depth": [ 2, 50],
+    "l1_filter_size": [ 3, 150],
+    "l2_depth": [ 2, 50],
+    "l2_filter_size": [ 3, 150],
+    "dense_num_nuerons": [ 4, 1000],
+    "is_grid_search": true,
+    "num_of_itr_random": 20,
+    "num_of_values_grid": 2
+
+  }
+
+}
